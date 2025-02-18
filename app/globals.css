@@ -4,12 +4,15 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #948787;
     --foreground: #ededed;
   }
 }

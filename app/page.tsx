@@ -1,9 +1,12 @@
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  await new Promise((reslove) => setTimeout(reslove, 1000));
   return (
-    <div>
-     <Link href='/blog' className="hover:underline">Go to blog</Link>
+    <div className="h-screen ">
+      <Link href="/blog" className="hover:underline">
+        Go to blog
+      </Link>
     </div>
   );
 }

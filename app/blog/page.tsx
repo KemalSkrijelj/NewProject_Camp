@@ -15,6 +15,8 @@ async function getBlogPosts(): Promise<GetAllPostsResponse> {
 export default async function BlogPage() {
   const postData = await getBlogPosts()
 
+  await new Promise((reslove) => setTimeout(reslove, 1000))
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Our Blog</h1>
