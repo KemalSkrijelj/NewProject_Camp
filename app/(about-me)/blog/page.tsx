@@ -1,5 +1,5 @@
-import BlogPostCard from "../components/blog-post_card";
-import { GetAllPostsResponse } from "../lib/types"
+import BlogPostCard from "../../components/blog-post_card";
+import { GetAllPostsResponse } from "../../lib/types";
 
 // Refactor this function to return all posts from the actual API
 // fetch('https://dummyjson.com/posts')
@@ -7,15 +7,17 @@ import { GetAllPostsResponse } from "../lib/types"
 // .then(console.log);
 
 async function getBlogPosts(): Promise<GetAllPostsResponse> {
-    const posts = await fetch('https://dummyjson.com/posts').then(res => res.json())
+  const posts = await fetch("https://dummyjson.com/posts").then((res) =>
+    res.json()
+  );
 
-    return posts;
+  return posts;
 }
 
 export default async function BlogPage() {
-  const postData = await getBlogPosts()
+  const postData = await getBlogPosts();
 
-  await new Promise((reslove) => setTimeout(reslove, 1000))
+  await new Promise((reslove) => setTimeout(reslove, 1000));
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -26,5 +28,5 @@ export default async function BlogPage() {
         ))}
       </div>
     </div>
-  )
+  );
 }
